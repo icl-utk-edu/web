@@ -1,0 +1,53 @@
+
+
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="style"><tr>
+<td>
+<div class="NewsHeadline">PaRSEC / DPLASMA 1.2.0</div>
+</td>
+<td>
+<div class="NewsDate">2014-04-03</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p>A new version of the PaRSEC runtime together with the DPLASMA dense linear algebra library is out. This release brings many changes to the runtime, as well as to the DPLASMA layer.</p>
+<p>At the runtime level many existing features have been stabilized and optimized. A non-exhaustive list contains:</p>
+<ul>
+<li>Only support for C is required from MPI.</li>
+<li>Revert to an older LEX syntax (not (?i:xxx))</li>
+<li>Don't recursively call the MPI communication engine progress function.</li>
+<li>Protect the runtime headers from inclusion in C++ files.</li>
+<li>Fix a memory leak allowing the remote data to be released once used.</li>
+<li>Integrate the new profiling system and the python interface (added Panda support).</li>
+<li>Change several default parameters for the DPLASMA tests.</li>
+<li>Add Fortran support for the PaRSEC and the profiling API and add tests to validate it.</li>
+<li>Backport all the profiling features from the devel branch (panda support, simpler management, better integration with python, support for HDF5...).</li>
+<li>Change the colorscheme of the .dot generator</li>
+<li>Correctly compute the identifier of the tasks (ticket #33).</li>
+<li>Allocate the list items from the corresponding list using the requested gap.</li>
+<li>Add support for older lex (without support for ?i).</li>
+<li>Add support for 128 bits atomics and resolve the lingering ABA issue. When 128 bits atomics are not available fall back to an atomic lock implementation of the most basic data structures.</li>
+<li>Required Cython 0.19.1 (at least)</li>
+<li>Completely disconnect the ordering of parameters and locals in the JDF.</li>
+<li>Many other minor bug fixes, code readability impeovement and typos.</li>
+</ul>
+<p>In addition to these capabilities the current release bring a more efficient runtime, able to deliver more performance to the DPLASMA library.</p>
+<ul>
+<li>Add the doxygen documentation generation.</li>
+<li>Improved ztrmm with all the matrix reads unified.</li>
+<li>Support for potri functions (trtri+lauum), and corresponding testings.</li>
+<li>Fix bug in symmetric/hermitian norms when A.mt &lt; P.</li>
+</ul></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>dplasma-1.2.0.tgz</strong> &nbsp; <a class="download-link" href="/projectsfiles/parsec/pubs/dplasma-1.2.0.tgz">Download</a></div>
+</td>
+</tr>
+</table>
+<a name="license"></a><div class="fine-heading">License</div><p class="fine">Copyright &copy; 2022 The University of Tennessee. All rights reserved.</p><p class="fine">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: <br />
+&middot; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. <br />
+&middot; Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer listed in this license in the documentation and/or other materials provided with the distribution. <br />
+&middot; Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+<p class="fine">This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. in no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p></div>

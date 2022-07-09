@@ -1,0 +1,47 @@
+
+
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="style"><tr>
+<td>
+<div class="NewsHeadline">PaRSEC / DPLASMA 1.1.0  (codename mage)</div>
+</td>
+<td>
+<div class="NewsDate">2014-01-16</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p>We are pleased to inform you about a major release of the PaRSEC/DPLASMA software. This release brings many changes to the runtime, and present a step forward toward the completion of the DPLASMA layer.</p>
+<p>&nbsp;</p>
+<p>At the runtime level many existing features have been stabilized and optimized. A non-exhaustive list contains: collective data flow support, implicit broadcast management, memory usage, accelerator support, minimize data transfers to and from accelerators, improved NUMA awareness, smarter schedulers, smarter messaging layer supporting message aggregation and eager protocols. In addition to these capabilities the current release bring a more efficient runtime, able to deliver more performance to the DPLASMA library.</p>
+<p>&nbsp;</p>
+<p>The content of DPLASMA expanded and stabilized. It now supports in all 4 precisions (S, D, C and Z) the following features:</p>
+<p>&nbsp; - All BLAS3 (GPU support included in gemm)</p>
+<p>&nbsp; - BLAS2: gerc, geru, gemv</p>
+<p>&nbsp; - Max, One, Inf and Frobenius norms in all four lange, lanhe, lansy and lantr routines</p>
+<p>&nbsp; - Extra functions: &nbsp;geadd, lacpy, laset, laswp, print, a large selection of special matrix generators (from the Matlab gallery), and generalized operator mapping capabilities (map and map2)</p>
+<p>&nbsp; - Cholesky: potrf (GPU support), potrs, posv</p>
+<p>&nbsp; - LQ/QR: Factorization + solve + Q generation in all 3 following variants</p>
+<p>&nbsp; &nbsp; &nbsp; - Original tile-algo (ideal for square matrices if super-tiling is used to reduce communication volume)</p>
+<p>&nbsp; &nbsp; &nbsp; - Hierarchical with multi-level. This is expected to deliver the best results when correctly configured. Some defaults have been implemented so anyone who is able to read the comments should be able to run at decent efficiently.</p>
+<p>&nbsp; &nbsp; &nbsp; - Systolic 1, 2 or 3D. Proof of concept, to be used cautiously.</p>
+<p>&nbsp; - LU: Factorization + solve</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;- No pivoting: To use only if diagonal dominant matrices</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;- LU incremental pivoting: same remarks as Tile-QR, needs super-tiling to be efficient, but accuracy is poor.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;- LU partial pivoting exploiting recursive parallel kernel to perform panel factorization. Requires the data to be distributed in a ScaLAPACK block column-cyclic distribution (P = 1) format.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;- Hybrid LU-QR: this version is available but not fully detailed and not user-friendly at all.</p>
+<p>&nbsp;</p>
+<p>Please visit http://icl.cs.utk.edu/parsec/software/index.html for access to the code and also for more information.</p>
+<p>&nbsp;</p></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>dplasma-1.1.0.tgz</strong> &nbsp; <a class="download-link" href="/projectsfiles/parsec/pubs/dplasma-1.1.0.tgz">Download</a></div>
+</td>
+</tr>
+</table>
+<a name="license"></a><div class="fine-heading">License</div><p class="fine">Copyright &copy; 2022 The University of Tennessee. All rights reserved.</p><p class="fine">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: <br />
+&middot; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. <br />
+&middot; Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer listed in this license in the documentation and/or other materials provided with the distribution. <br />
+&middot; Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+<p class="fine">This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. in no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p></div>
