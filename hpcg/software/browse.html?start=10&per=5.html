@@ -1,0 +1,136 @@
+
+
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="style"><tr><td><div class="SectionTitle"><h1>HPCG Software Releases</h1></div>
+<p>The development of the HPCG software is tracked on GitHub: <a href="https://github.com/hpcg-benchmark/hpcg/">https://github.com/hpcg-benchmark/hpcg/</a></p>
+</td></tr></table><div class="pager"><a class="prev" href="browse.html%3Fstart=5&amp;per=5.html">< Newer entries</a> Showing 11-15 of 23 Entries<a class="next" href="browse.html%3Fstart=15&amp;per=5.html">Older entries ></a></div><table border="0" cellspacing="5" cellpadding="0" width="100%" class="entry software-entry"><tr>
+<td>
+<div class="NewsHeadline">Intel® MKL Benchmarks - includes optimized HPCG 3.0 for Intel XEON and Phi</div>
+</td>
+<td>
+<div class="NewsDate">2015-11-01</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p> Intel versions of HPCG 3.0 for Linux based systems (including clusters) with
+Intel multicore and manycore (Phi KNL) processors.
+</p>
+<p> Details are at 
+<a href="https://software.intel.com/en-us/articles/intel-mkl-benchmarks-suite"> 
+https://software.intel.com/en-us/articles/intel-mkl-benchmarks-suite</a>.
+</p></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>l_mklb_p_11.3.1.002.tgz</strong> &nbsp; <a class="download-link" href="http://registrationcenter.intel.com/irc_nas/8305/l_mklb_p_11.3.1.002.tgz">Download</a> <a class="license"  href="browse.html%3Fstart=10&amp;per=5.html#license">View License</a></div>
+</td>
+</tr>
+</table>
+<hr />
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="entry software-entry"><tr>
+<td>
+<div class="NewsHeadline">HPCG 2.4 Binary from NVIDIA Optimized for NVIDIA GPUs</div>
+</td>
+<td>
+<div class="NewsDate">2015-06-15</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription">This is a binary-only code optimized by NVIDIA employees.<br/>
+
+It requires CUDA 6.5 and OpenMPI 1.6  or 1.8.<br/>
+
+The number of CPU threads can be controlled with the OMP_NUM_THREADS variable.<br/>
+
+The implementation assumes a 1:1 mapping between MPI ranks and GPUs and the code automatically maps them.<br/>
+
+For example, to run on two nodes with 4 GPUs each, a similar command should be specified:<br/>
+
+<code>mpirun -np 8 ./xhpcg_cuda6.5_openmpi</code><br/>
+
+On  K20x a good local problem size is 256x256x128, on K40/K80 256*256*256.<br/>
+
+SHA256 b93115e4609d0dc832e389d05524831dcc2ef8ab6ecd3c0353768128549a7c91</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>xhpcg_cuda6.5_openmpi</strong> &nbsp; <a class="download-link" href="../downloads/xhpcg_cuda6.5_openmpi">Download</a> <a class="license"  href="browse.html%3Fstart=10&amp;per=5.html#license">View License</a></div>
+</td>
+</tr>
+</table>
+<hr />
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="entry software-entry"><tr>
+<td>
+<div class="NewsHeadline">HPCG 2.4 Reference code</div>
+</td>
+<td>
+<div class="NewsDate">2014-06-03</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p>Release 2.4 fixes a flop count error introduced in Release 2.2 and not completely resolved in Release 2.3.</p>
+<p>SHA256 932ef008995a7d70da714631c18acc6f322c884160d53955ce45f21505372215</p></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>hpcg-2.4.tar.gz</strong> &nbsp; <a class="download-link" href="../downloads/hpcg-2.4.tar.gz">Download</a> <a class="license"  href="browse.html%3Fstart=10&amp;per=5.html#license">View License</a></div>
+</td>
+</tr>
+</table>
+<hr />
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="entry software-entry"><tr>
+<td>
+<div class="NewsHeadline">HPCG 2.3 Reference code</div>
+</td>
+<td>
+<div class="NewsDate">2014-06-02</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p>Release 2.3 fixes a flop count error introduced in Release 2.2.</p>
+<p>SHA256 d5a9c8505a0a6e02fbc77c1478189dc2bed6e253cf28dd5dcc29255f2c01b624</p></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>hpcg-2.3.tar.gz</strong> &nbsp; <a class="download-link" href="../downloads/hpcg-2.3.tar.gz">Download</a> <a class="license"  href="browse.html%3Fstart=10&amp;per=5.html#license">View License</a></div>
+</td>
+</tr>
+</table>
+<hr />
+<table border="0" cellspacing="5" cellpadding="0" width="100%" class="entry software-entry"><tr>
+<td>
+<div class="NewsHeadline">HPCG 2.2 Reference code</div>
+</td>
+<td>
+<div class="NewsDate">2014-05-27</div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="SoftwareDescription"><p>Release 2.2 reduces the penalty for optimization overhead costs by a factor of 10. It also contain several minor bugfixes.</p>
+<p>SHA256 1b1330ab6405f3bf57dea03b60b560518fd1c289b91e53a10e139876a1cfc6a4</p></div>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="Download"><strong>hpcg-2.2.tar.gz</strong> &nbsp; <a class="download-link" href="../downloads/hpcg-2.2.tar.gz">Download</a> <a class="license"  href="browse.html%3Fstart=10&amp;per=5.html#license">View License</a></div>
+</td>
+</tr>
+</table>
+<hr />
+<div class="pager"><a class="prev" href="browse.html%3Fstart=5&amp;per=5.html">< Newer entries</a> Showing 11-15 of 23 Entries<a class="next" href="browse.html%3Fstart=15&amp;per=5.html">Older entries ></a></div>
+<a name="license"></a><div class="fine-heading">License</div>
+<p class="fine">Copyright &copy; 2022 The University of Tennessee. All rights reserved.</p>
+<p class="fine">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: <br />
+&middot; Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. <br />
+&middot; Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer listed in this license in the documentation and/or other materials provided with the distribution. <br />
+&middot; Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+<p class="fine">This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. in no event shall the copyright owner or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p>
+</div>

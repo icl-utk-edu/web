@@ -1,0 +1,103 @@
+input[type=file] {
+    padding-top: 9px;
+    }
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+legend {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+  width: 98%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 98%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td, th {
+  font-family: "Lucida Grande", Verdana, Geneva, Lucida, Arial, Helvetica, sans-serif;
+ 	font-size:12px;
+  padding: 4px;
+}
+
+thead {
+  background: #4E9DA5;
+  color: #fff;
+}
+
+thead tr th {
+  border-bottom: 2px solid black;
+  border-collapse:separate;
+  border-spacing:5px 5px;
+}
+
+.btn {
+    background-color: #053763;
+}
+
+.numeric {
+  text-align: right;
+}
+
+#banner {
+  background-image: url("hpcg-banner-background.png");
+  background-repeat: repeat-x;
+  display: block;
+  height: 131px;
+  margin: 0 auto;
+}
+
+#banner img {
+  display: block;
+  margin: 0 auto;
+}
+
+#banner-title {
+  font-family: Helvetica,Arial,"Lucida Grande",Verdana,Geneva,Lucida,sans-serif;
+  font-size: 21px;
+  letter-spacing: -1px;
+  font-weight: normal;
+  line-height: 25px;
+  color: #fff;
+  background-color: #000;
+  padding-right: 15px;
+  position: relative;
+  top: -34px;
+  text-align: right;
+}
+
+#captcha-img {
+  padding-left: 266px;
+}
+
+#container {
+  border: 1px solid #666;
+  margin: 0 auto;
+  width: 756px;
+}
+
+#container-results {
+  border: 1px solid #666;
+  margin: 0 auto;
+  width: 1024px;
+}
+
+#footer {
+  border-top: 1px solid #666;
+  height: 72px;
+  padding-top: 10px;
+}
+
+#footer img {
+  display: block;
+  margin: 0 auto;
+}

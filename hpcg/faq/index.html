@@ -1,0 +1,322 @@
+
+<div class="SectionTitle"><h1>FAQ</h1></div>
+
+<div class="PrintLink"><a href="index_print.html">Printable Version</a></div><table border="0" cellspacing="5" cellpadding="0" width="100%" class="style"><tr>
+<td>
+<div class="Style"><a href="index.html#70"><b>Relation to other benchmarks</b></a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#347">Will HPCG replace High Performance Linpack (HPL)?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#348">Isn't HPCG just another version of the STREAM benchmark?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#352">How is HPCG different from NAS PB CG (NAS Parallel Benchmarks, CG component)?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#75"><b>HPCG Details</b></a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#359">What's the average vector length in HPCG?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#71"><b>Optimization of HPCG</b></a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#349">Is it permitted to use a custom ordering for the matrix?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#350">Can I change the Gauss-Seidel preconditioner to make it parallel?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#360">How big must the problem size be when running HPCG?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#351">Why doesn't HPCG include variant X of the CG algorithm?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#365">Are specialized matrix storage format allowed in optimized run?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#366">Is data compression allowed for matrix and vector data?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#77"><b>HPCG Results</b></a></div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Style"><a href="index.html#364">What is the fraction of peak in the results?</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<a name="70"></a>
+<div class="SectionTitle"><h1>Relation to other benchmarks</h1></div>
+<div class="SectionDescription"><p>How does HPCG relate to other benchmarks.</p></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="347"></a>
+<div class="Question">Will HPCG replace High Performance Linpack (HPL)?</div>
+<div class="Answer"><p>We do not intend to eliminate HPL. HPCG will provide an alternative ranking of the TOP500 machines. We expect that HPCG will take several years to both mature and emerge as a widely-visible metric.</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="348"></a>
+<div class="Question">Isn't HPCG just another version of the STREAM benchmark?</div>
+<div class="Answer"><p>If the reference version of HPCG is used for performance analysis, the fraction
+of time spent in the (unoptimized) sparse kernels (in particular ComputeSPMV and
+ ComputeSYMGS) will be very high, and HPCG performance will be dominated by 
+memory system performance. In this case, for computer systems with a good 
+reduction networks, or HPCG runs using few MPI processes, the benchmark will 
+give rankings that are very similar to STREAM.</p>
+
+<p>However, this is true for many benchmarks. If HPL were executed with
+ reference Fortran computational kernels (Basic Linear Algebra Subprograms), 
+HPL would also look like a STREAM benchmark.</p>
+
+<p>Warnings have been added to HPCG reports to let the benchmarker know 
+that performance will be suboptimal when using reference kernels.</p>
+
+<p>Even after optimization of HPCG, its overall performance will still be heavily 
+influenced by memory system performance, but not solely by how fast data streams 
+from memory.  Memory latency, synchronous global and neighborhood collectives, 
+and thread control transfer--all of which have strong dependencies on memory system
+performance--are important factors in the performance of an optimized version of
+HPCG. </p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="352"></a>
+<div class="Question">How is HPCG different from NAS PB CG (NAS Parallel Benchmarks, CG component)?</div>
+<div class="Answer"><p>NAS PB CG uses random sparsity pattern which naturally leads to two-dimensional distribution of the matrix for optimality. This results in computation and communication patterns that are non-physical. Another difference is the lack of preconditioning, does not allow to show the effects of local triangular solve. The options for introducing such a preconditioning component are limited due to the non-physical sparsity pattern.</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<a name="75"></a>
+<div class="SectionTitle">HPCG Details</div>
+<div class="SectionDescription"></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="359"></a>
+<div class="Question">What's the average vector length in HPCG?</div>
+<div class="Answer"><p>
+For axpy-like and ddot-like operations, the vector length is
+the size of the submatrix on each MPI process, typically 1M
+or more.
+</p>
+
+<p>
+For the SpMV, the vector lengths in the reference kernel average
+about 25, with indexed reads (gathers) and summation in to a single
+value.  This is the inner loop of the sparse row format MV. This is
+the basic pseudo code:
+<p/>
+
+<p>
+<code>for (i=0; i&lt;nrow; ++i) { // Number of rows on this MPI process (big)</code><br/>
+<code>   double sum = 0.0;</code><br/>
+<code>    for (j=ptr[i]; j&lt;ptr[i+1]; ++j) </code><br/>
+<code>      &nbsp;&nbsp; sum += A[j] * x[col[j]];  // This loop is on average length 25</code><br/>
+<code> y[i] = sum;</code><br/>
+<code>}</code><br/>
+</p>
+
+<p>
+For the SymGS, the vector lengths is on average 12, with the same
+index read pattern, except that the loop does not naturally vectorize
+since the SymGS operation is like a triangular solve, recursive.
+</p>
+
+<p>
+Optimized implementations of SpMV tend to re-order the matrix data
+structure so that the SpMV loops are still indexed reads, but are
+of length nrow (same as axpy), using, for example, the Jagged Diagonal
+or Ellpack format.
+</p>
+
+<p>
+Optimized implementations of SymGS are also reordered to get longer
+vector lengths, but typically are a fraction of nrow, or much smaller,
+depending on whether targeted for the GPU or a CPU.  The GPU approach
+uses multicoloring, so that vector lengths are approximately nrow/8.
+The CPU approach will use level-scheduling where vector lengths will
+vary a lot, but are typically in the range of 15 - 100.  The GPU
+approach takes more iterations, which is penalized by HPCG.
+All optimized SymGS approaches use indexed reads.
+</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<a name="71"></a>
+<div class="SectionTitle">Optimization of HPCG</div>
+<div class="SectionDescription"><p>What could be done to make HPCG run more optimally on your system and what are the allowed optimizations.</p></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="349"></a>
+<div class="Question">Is it permitted to use a custom ordering for the matrix?</div>
+<div class="Answer"><p>Yes, it is permitted to use a custom ordering of the grid points. This is facilitated with the function <code>OptimizeProblem()</code> and the <code>optimizationData</code> members of various data structures.</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="350"></a>
+<div class="Question">Can I change the Gauss-Seidel preconditioner to make it parallel?</div>
+<div class="Answer"><p>It is not permitted to change the preconditioner but it is allowed to change the ordering of the matrix to facilitate parallel preconditioning.</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="360"></a>
+<div class="Question">How big must the problem size be when running HPCG?</div>
+<div class="Answer"><p>
+HPCG can be run in just a few minutes from start to finish.  However, official
+runs must be at least 1800 seconds (30 minutes) as reported in the output file.
+The Quick Path option is an exception for machines that are in production mode
+prior to broad availability of an optimized version of HPCG 3.0 for a given platform.
+In this situation (which should be confirmed by sending a note to the HPCG Benchmark
+owners) the Quick Path option can be invoked by setting the run time parameter equal
+to 0 (zero).
+</p>
+
+<p>
+A valid run must also execute a problem size that is large enough so that data 
+arrays accessed in the CG iteration loop do not fit in the cache of the device
+in a way that would be unrealistic in a real application setting.  Presently this
+restriction means that the problem size should be large enough to occupy a 
+significant fraction of "main memory", at least 1/4 of the total.
+</p>
+
+<p>
+Future memory system architectures may require restatement of the specific memory
+size requirements.  But the guiding principle will always be that the problem
+size should reflect what would be reasonable for a real sparse iterative solver.
+ </p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="351"></a>
+<div class="Question">Why doesn't HPCG include variant X of the CG algorithm?</div>
+<div class="Answer"><p>We are aware of many variants of the CG algorithm and their benefits for particular matrices. At the same time, we strive for simplicity of the reference implementation and permit only selected optimizations that allow the results to remain representative of a wide range of CG variants.</p></div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="365"></a>
+<div class="Question">Are specialized matrix storage format allowed in optimized run?</div>
+<div class="Answer">Any storage format that is specific to HPCG matrix sparsity is not allowed.
+However, the storage formats applicable for many kinds of sparsity patterns are permitted.
+For example, a diagonal storage format is likely to be very good for HPCG matrix but is too specific for HPCG and artificially reduces the amount of data transferred across the system.</div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="366"></a>
+<div class="Question">Is data compression allowed for matrix and vector data?</div>
+<div class="Answer">We do not permit matrix compression to be performed on the HPCG data because of its predictable structure that can be easily exploited for an a-priori optimal compression scheme.
+Data compression, and especially the kind that takes advantage of the known matrix structure, reduces the data transfer amount that most solvers are unable to replicate for majority of use cases.
+</div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+<tr>
+<td>
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<a name="77"></a>
+<div class="SectionTitle">HPCG Results</div>
+<div class="SectionDescription"></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="364"></a>
+<div class="Question">What is the fraction of peak in the results?</div>
+<div class="Answer">The "fraction of peak" is a derived value reported in the HPCG Results table.
+It is a result of dividing the HPCG Pflop/s value by the peak performance of the machine that is reported as Rpeak in TOP500.</div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
+</table>
+
+

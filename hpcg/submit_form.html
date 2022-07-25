@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>HPCG Upload Results</title>
+
+<!-- jQuery JS -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- Bootstrap CSS/JS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- BootstrapValidator -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+<!--  FontAwesome CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Local Styles -->
+<link href="/assets/submit_form.css" rel="stylesheet">
+</head>
+<body>
+
+<br/>
+
+<div id="container">
+
+<a href="http://hpcg-benchmark.org/">
+	<img src="http://hpcg-benchmark.org/hpcg-logo.png" width="756" height="167" alt="HPCG" border="0"/>
+</a>
+
+<br/>
+
+<form id="submissionform" class="form-horizontal" action="submit_form" enctype="multipart/form-data" method="post"
+  data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+  data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+  data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
+
+<!-- Form Name -->
+
+<!-- Text input-->
+
+<fieldset>
+  <legend>Submitter</legend>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="first_name">First name</label>
+  <div class="col-md-6">
+  <input id="first_name" name="first_name" placeholder="First name" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+    data-bv-notempty-message="The First name field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="last_name">Last name</label>
+  <div class="col-md-6">
+  <input id="last_name" name="last_name" placeholder="Last name" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+		data-bv-notempty-message="The Last name field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Email</label>
+  <div class="col-md-6">
+  <input id="email" name="email" placeholder="Email" class="form-control input-md" required="" type="email"
+	  data-bv-notempty="true"
+    data-bv-notempty-message="The Email field is required and cannot be empty"
+    data-bv-emailaddress="true"
+    data-bv-emailaddress-message="The email address is not a valid" />
+
+  </div>
+</div>
+
+</fieldset>
+
+<fieldset>
+  <legend>Site</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="installation_site">Installation site</label>
+  <div class="col-md-6">
+  <input id="installation_site" name="installation_site" placeholder="Installation site" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+		data-bv-notempty-message="The Installation site field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="city">City</label>
+  <div class="col-md-6">
+    <input id="city" name="city" placeholder="City" class="form-control input-md" required="" type="text"
+    data-bv-notempty="true"
+    data-bv-notempty-message="The City field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="country">Country</label>
+  <div class="col-md-6">
+  <input id="country" name="country" placeholder="Country" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+		data-bv-notempty-message="The Country field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="segment">Segment</label>
+  <div class="col-md-4">
+    <select id="segment" name="segment" class="form-control">
+      <option value="">Segment</option>
+      <option value="Academic">Academic</option>
+      <option value="Classified">Classified</option>
+      <option value="Government">Government</option>
+      <option value="Industry">Industry</option>
+      <option value="Research">Research</option>
+      <option value="Vendor">Vendor</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="url">URL</label>
+  <div class="col-md-6">
+    <input id="country" name="url" placeholder="URL" class="form-control input-md" type="url" />
+  </div>
+</div>
+
+</fieldset>
+
+<fieldset>
+  <legend>System</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="system_name">System name</label>
+  <div class="col-md-6">
+  <input id="system_name" name="system_name" placeholder="System name" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+		data-bv-notempty-message="The System name field is required and cannot be empty" />
+    <span class="help-block">The vanity name for the system, e.g. Tianhe-2, Titan, Sequoia.</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="manufacturer">Manufacturer</label>
+  <div class="col-md-6">
+  <input id="manufacturer" name="manufacturer" placeholder="Manufacturer" class="form-control input-md" required="" type="text"
+	  data-bv-notempty="true"
+		data-bv-notempty-message="The Manufacturer field is required and cannot be empty" />
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="computer">Computer</label>
+  <div class="col-md-6">
+  <input id="computer" name="computer" placeholder="Computer" class="form-control input-md" required="" type="text"
+	data-bv-notempty="true"
+	data-bv-notempty-message="The Computer field is required and cannot be empty" />
+    <span class="help-block">Type indicated by manufacturer or vendor, e.g. TH-IVB-FEP Cluster, Cray XK7, BlueGene/Q.</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor">Processor</label>
+  <div class="col-md-6">
+  <input id="processor" name="processor" placeholder="Processor" class="form-control input-md" required="" type="text"
+	data-bv-notempty="true"
+	data-bv-notempty-message="The Processor field is required and cannot be empty"
+	data-bv-regexp="true"
+	data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+	data-bv-regexp-message="The Processor can only consist of alphanumeric characters, spaces, or hyphen" />
+	<span class="help-block">Examples: Intel Xeon E5-2680-V3, AMD Opteron 6380, IBM POWER8 </span>
+  </div>
+</div>
+
+<!-- Int input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor_cores">Processor cores</label>
+  <div class="col-md-6">
+  <input id="processor_cores" name="processor_cores" placeholder="Processor cores" class="form-control input-md" required="" type="number" min="1"
+	data-bv-integer="true"
+    data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor_speed">Processor speed (GHz)</label>
+  <div class="col-md-6">
+    <input id="processor_speed" name="processor_speed" placeholder="Processor speed" class="form-control input-md" required="" type="number" min="0" step="any"
+    data-bv-numeric="true"
+    data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Processor2 Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor">Processor 2 (if present)</label>
+  <div class="col-md-6">
+  <input id="processor2" name="processor2" placeholder="Processor 2" class="form-control input-md" type="text"
+    data-bv-notempty="false"
+	data-bv-regexp="true"
+	data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+	data-bv-regexp-message="The Processor 2 can only consist of alphanumeric characters, spaces, or hyphen" />
+  </div>
+</div>
+
+<!-- Processor2 cores Int input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor2_cores">Processor 2 cores (if present)</label>
+  <div class="col-md-6">
+  <input id="processor2_cores" name="processor2_cores" placeholder="Processor 2 cores" class="form-control input-md" type="number" min="1"
+	data-bv-integer="true"
+    data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Processor2 speed Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor2_speed">Processor 2 speed (GHz), if present</label>
+  <div class="col-md-6">
+    <input id="processor2_speed" name="processor2_speed" placeholder="Processor 2 speed" class="form-control input-md" type="number" min="0" step="any"
+      data-bv-numeric="true"
+      data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Processor3 Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor">Processor 3 (if present)</label>
+  <div class="col-md-6">
+  <input id="processor3" name="processor3" placeholder="Processor 3" class="form-control input-md" type="text"
+    data-bv-notempty="false"
+	data-bv-regexp="true"
+	data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+	data-bv-regexp-message="The Processor 3 can only consist of alphanumeric characters, spaces, or hyphen" />
+  </div>
+</div>
+
+<!-- Processor3 cores Int input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor3_cores">Processor 3 cores (if present)</label>
+  <div class="col-md-6">
+  <input id="processor3_cores" name="processor3_cores" placeholder="Processor 3 cores" class="form-control input-md" type="number" min="1"
+	data-bv-integer="true"
+    data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Processor3 speed Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="processor3_speed">Processor 3 speed (GHz), if present</label>
+  <div class="col-md-6">
+    <input id="processor3_speed" name="processor3_speed" placeholder="Processor 3 speed" class="form-control input-md" type="number" min="0" step="any"
+      data-bv-numeric="true"
+      data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="accelerator">Accelerator</label>
+  <div class="col-md-6">
+  <input id="accelerator" name="accelerator" placeholder="Accelerator" class="form-control input-md" type="text"
+    data-bv-notempty="false"
+	data-bv-regexp="true"
+	data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+	data-bv-regexp-message="The Accelerator can only consist of alphanumeric characters, spaces, or hyphen" />
+	<span class="help-block">Examples: AMD W9100, Intel Xeon Phi 7120P, NVIDIA Kepler K40 </span>
+  </div>
+</div>
+
+<!-- Int input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="accelerator_cores">Accelerator cores</label>
+  <div class="col-md-6">
+  <input id="accelerator_cores" name="accelerator_cores" placeholder="Accelerator cores" class="form-control input-md" type="number" min="0"
+	data-bv-integer="true"
+	data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="accelerator">Accelerator 2 (if present)</label>
+  <div class="col-md-6">
+  <input id="accelerator2" name="accelerator2" placeholder="Accelerator 2" class="form-control input-md" type="text"
+    data-bv-notempty="false"
+	data-bv-regexp="true"
+	data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+	data-bv-regexp-message="The Accelerator 2 can only consist of alphanumeric characters, spaces, or hyphen" />
+  </div>
+</div>
+
+<!-- Int input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="accelerator_cores">Accelerator 2 cores (if present)</label>
+  <div class="col-md-6">
+  <input id="accelerator2_cores" name="accelerator2_cores" placeholder="Accelerator 2 cores" class="form-control input-md" type="number" min="0"
+	data-bv-integer="true"
+	data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+	<label class="col-md-4 control-label" for="interconnect">Interconnect</label>
+	<div class="col-md-6">
+	<input id="interconnect" name="interconnect" placeholder="Interconnect" class="form-control input-md" type="text"
+		data-bv-notempty="false"
+		data-bv-regexp="true"
+		data-bv-regexp-regexp="^[a-zA-Z0-9\s\-]+$"
+		data-bv-regexp-message="The Interconnect can only consist of alphanumeric characters, spaces, or hyphen"/>
+	</div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="memory">Memory (TB)</label>
+  <div class="col-md-4">
+  <input id="memory_cpu" name="memory_cpu" placeholder="Memory" class="form-control input-md" type="number" min="1"
+    data-bv-notempty="false"
+    data-bv-integer="true"
+    data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  <span class="help-block">(total in Tera-bytes; accessible by CPUs)</span>
+  </div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="peak_memory_bandwidth">Peak memory bandwidth (TB/s)</label>
+  <div class="col-md-6">
+    <input id="peak_memory_bandwidth" name="peak_memory_bandwidth" placeholder="Peak memory bandwidth" class="form-control input-md" required="" type="number" min="0" step="any"
+    data-bv-numeric="true"
+    data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="memory_accelerator">Memory for accelerators (TB)</label>
+  <div class="col-md-4">
+  <input id="memory_accelerator" name="memory_accelerator" placeholder="Memory for accelerators" class="form-control input-md"  type="number" min="1"
+    data-bv-notempty="false"
+    data-bv-integer="true"
+    data-bv-integer-message="The value is not an integer, commas are not accepted" />
+  <span class="help-block">(total in Tera-bytes, for accelerator only if present)</span>
+  </div>
+</div>
+
+<!-- Int input-->
+<div class="form-group">
+	<label class="col-md-4 control-label" for="accelerator_cores">HPL Rank</label>
+	<div class="col-md-6">
+	<input id="hpl_rank" name="hpl_rank" placeholder="HPL Rank" class="form-control input-md" type="number" min="1"
+		data-bv-notempty="false"
+		data-bv-integer="true"
+		data-bv-integer-message="The value is not an integer, commas are not accepted" />
+	</div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="hpl_rmax">HPL Rmax (Tflop/s)</label>
+  <div class="col-md-6">
+  <input id="hpl_rmax" name="hpl_rmax" placeholder="HPL Rmax" class="form-control input-md" type="number" min="0" step="any"
+	  data-bv-notempty="false"
+		data-bv-numeric="true"
+		data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="hpl_peak">HPL Peak (Tflop/s)</label>
+  <div class="col-md-6">
+    <input id="hpl_peak" name="hpl_peak" placeholder="HPL Peak" class="form-control input-md" type="number" min="0" step="any"
+    data-bv-notempty="false"
+    data-bv-numeric="true"
+    data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="power">HPL Power (kW)</label>
+  <div class="col-md-6">
+  <input id="hpl_power" name="hpl_power" placeholder="HPL Power" class="form-control input-md" type="number" min="0" step="any"
+	  data-bv-notempty="false"
+		data-bv-numeric="true"
+		data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+  </div>
+</div>
+
+<!-- Numeric input-->
+<div class="form-group">
+	<label class="col-md-4 control-label" for="power">HPCG Power (kW)</label>
+	<div class="col-md-6">
+	<input id="hpcg_power" name="hpcg_power" placeholder="HPCG Power" class="form-control input-md" type="number" min="0" step="any"
+		data-bv-notempty="false"
+		data-bv-numeric="true"
+		data-bv-numeric-message="The value is not a numeric value, commas are not accepted" />
+	</div>
+</div>
+
+</fieldset>
+
+<fieldset>
+  <legend>Submission</legend>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="run_type">Run type</label>
+  <div class="col-md-4">
+    <label class="radio-inline" for="baseline">
+      <input name="run_type" id="baseline" value="Baseline" checked="checked" type="radio">
+      Baseline (no source code changes)
+    </label>
+    <label class="radio-inline" for="optimized">
+      <input name="run_type" id="optimized" value="Optimized" type="radio">
+      Optimized
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="acceleration">Was acceleration used</label>
+  <div class="col-md-4">
+    <label class="radio-inline" for="cpu_only">
+      <input name="acceleration" id="cpu_only" value="CPU_only" checked="checked" type="radio">
+      CPU only
+    </label>
+    <label class="radio-inline" for="accelerated">
+      <input name="acceleration" id="accelerated" value="Accelerated" type="radio">
+      Accelerated (please specify if the accelerator was used during the run)
+    </label>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="os">Operating System</label>
+  <div class="col-md-4">
+  <input id="os" name="os" placeholder="Operating System" class="form-control input-md" type="text" />
+  <span class="help-block">Examples: Linux CentOS 6.7</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="compiler">Compiler</label>
+  <div class="col-md-4">
+  <input id="compiler" name="compiler" placeholder="Compiler" class="form-control input-md" type="text" />
+  <span class="help-block">Examples: GNU GCC 5.1, Intel Composer XE 2013.5.192, LLVM CLANG 7.0.0, PGI 15.3.0</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="math_library">Math Library</label>
+  <div class="col-md-4">
+  <input id="math_library" name="math_library" placeholder="Math Library" class="form-control input-md" type="text" />
+  <span class="help-block">Examples: Cray LibSci 13.0.4, Cray LibSci_Acc 3.1.2, Intel MKL 11.0.5.192</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="mpi_library">MPI Library</label>
+  <div class="col-md-4">
+  <input id="mpi_library" name="mpi_library" placeholder="MPI Library" class="form-control input-md" type="text" />
+  <span class="help-block">Examples: Cray MPICH 7.2.2, Intel MPI 4.1.1.036 </span>
+  </div>
+</div>
+
+<!-- File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="results_file">Results file</label>
+  <div class="col-md-6">
+	  <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /> -->
+    <input id="results_file" name="results_file" class="input-file" type="file"
+		  data-bv-notempty="true"
+			data-bv-notempty-message="The Results file field is required and cannot be empty" />
+  </div>
+</div>
+<!--
+<div class="form-group">
+  <label class="col-md-4 control-label" for="list">List</label>
+  <div class="col-md-4">
+    <select id="list" name="list" class="form-control">
+      <option value="2015-06-00">2015-06</option>
+      <option value="2014-11-00">2014-11</option>
+      <option value="2014-06-00">2014-06</option>
+    </select>
+  </div>
+</div>
+-->
+<!-- Text input-->
+
+<!-- Removing captcha
+<img id="captcha-img" src="/securimage/securimage_show_hpcg.php" alt="CAPTCHA Image" />
+<div class="form-group">
+	<label class="col-md-4 control-label" for="captcha_code">CAPTCHA</label>
+	<div class="col-md-6">
+	<input id="captcha_code" name="captcha_code" size="10" maxlength="6" class="form-control input-md" required=""
+	  data-bv-notempty="true" placeholder="Enter the result"
+		data-bv-notempty-message="The CAPTCHA field is required and cannot be empty" />
+		<span class="help-block">For the Captcha you need to do the arithmetic, i.e. if its "3 - 2” you have to enter “1”.</span> 
+	</div>
+</div>
+-->
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submitform"></label>
+  <div class="col-md-6">
+    <button type="submit" id="submitform" name="submitform" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+<input type="hidden" name="list" value="2015-11" />
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#submissionform').bootstrapValidator();
+});
+</script>
+
+<div id="footer">
+	<a href="http://www.icl.utk.edu/"><img src="http://icl.cs.utk.edu/projectsdev/universal/images/icl_footer.gif" width="100" height="50" alt="ICL" border="0"/></a>
+</div>
+
+</div>
+<br/><br/>
+</body>
+</html>
