@@ -16,5 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Trigger a website update
+      - name: Update hpcg website
         run: wget -O - -q http://dev.hpcg-benchmark.org/tmpl?update
+
+      - name: Update hpl-mxp.org website
+        run: wget -O - -q http://hpl-mxp.org/tmpl?update
