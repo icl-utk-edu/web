@@ -5,7 +5,7 @@ use warnings;
 use CGI 'header';
 use Text::MultiMarkdown 'markdown';
 
-my $DOCROOT = '/var/repo/hpcg';
+my $DOCROOT = '/var/www/html';
 
 main();
 
@@ -37,7 +37,7 @@ sub getfile {
 }
 
 sub update {
-   chdir $DOCROOT;
+   chdir '/var/repo';
    print header(), `git pull 2>&1`;
    return 1;
 }
