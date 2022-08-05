@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use CGI;
+use DBIx::Simple;
+use Data::Dumper;
+
+my $table = 'submissions';
+
+# Use this data structure to define the fields in the web form and database.
+# The values for each key are interpretted as regex filters to place limits
+# on the given field.
+my @schema = (
+   first_name => '\w+',
+   last_name => '',
+   email => '',
+   installation_site => '',
+   city => '',
+   country => '',
+   segment => '',
+   url => '',
+   system_name => '',
+   manufacturer => '',
+   computer => '',
+   processor => '',
+   processor_cores => '',
+   processor_speed => '',
+   processor2 => '',
+   processor2_cores => '',
+   processor2_speed => '',
+   processor3 => '',
+   processor3_cores => '',
+   processor3_speed => '',
+   accelerator => '',
+   accelerator_cores => '',
+   accelerator2 => '',
+   accelerator2_cores => '',
+   interconnect => '',
+   memory_cpu => '',
+   peak_memory_bandwidth => '',
+   memory_accelerator => '',
+   hpl_rank => '',
+   hpl_rmax => '',
+   hpl_peak => '',
+   hpl_power => '',
+   hpcg_power => '',
+   run_type => '',
+   acceleration => '',
+   os => '',
+   compiler => '',
+   math_library => '',
+   mpi_library => '',
+   results_file => '',
+   list => '',
+);
+
+my $cgi = CGI->new();
+
+my %schema = @schema;
+my @fields;
+while(@schema){
+   push @fields, shift(@schema);
+   shift @schema;
+}
+
+my $db = DBIx::Simple->connect("dbi:SQLite:dbname=/var/data/$table.db");
+my $col_def = join(',', @fields); 
+$db->{dbh}->do("CREATE TABLE IF NOT EXISTS $table ($col_def)");
+
+my (%data, @errors);
+for(@fields){
+   my $key = $_;
+   my $temp_fh = $cgi->upload($key);
+   if(defined $temp_fh) {
+      $data{$key} = join('', <$temp_fh>);
+   } else {
+      $data{$key} = $cgi->param($key);
+   }
+   next if $data{$key} =~ $schema{$key};
+   push @errors, "<p>Error: Invalid input for field '$key'.</p>";
+}
+if(@errors){
+   print $cgi->header();
+   print join("\n", @errors);
+   exit;
+}
+
+my $result = $db->insert($table, \%data);
+if(not defined $result or $result->{lc_columns} != 1){
+   print $cgi->header();
+   print "An error occurred while processing this request.";
+   exit;
+}
+
+print $cgi->redirect('/submit_success.html');
+
