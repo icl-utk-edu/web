@@ -1,7 +1,7 @@
 
-# HPL-AI Mixed-Precision Benchmark
+# HPL-MxP Mixed-Precision Benchmark
 
-The HPL-AI benchmark seeks to highlight the emerging convergence of
+The HPL-MxP benchmark seeks to highlight the emerging convergence of
 high-performance computing (HPC) and artificial intelligence (AI) workloads.
 While traditional HPC focused on simulation runs for modeling phenomena in
 physics, chemistry, biology, and so on, the mathematical models that drive
@@ -13,12 +13,12 @@ that deliver a mix of unprecedented performance levels and energy savings to
 achieve the classification and recognition fidelity afforded by higher-accuracy
 formats.
 
-HPL-AI strives to unite these two realms by delivering a blend of modern
+HPL-MxP strives to unite these two realms by delivering a blend of modern
 algorithms and contemporary hardware while simultaneously connecting to the
 solver formulation of the decades-old HPL framework of benchmarking the largest
 supercomputing installations in the world. The solver method of choice is a
 combination of LU factorization and iterative refinement performed afterwards
-to bring the solution back to 64-bit accuracy. The innovation of HPL-AI lies in
+to bring the solution back to 64-bit accuracy. The innovation of HPL-MxP lies in
 dropping the requirement of 64-bit computation throughout the entire solution
 process and instead opting for low-precision (likely 16-bit) accuracy for LU,
 and a sophisticated iteration to recover the accuracy lost in factorization.

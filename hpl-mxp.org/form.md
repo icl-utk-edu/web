@@ -71,16 +71,16 @@ Upload form
 <label for="nodes" class="form-label">Node count</label>
 <input type="text" class="form-control" id="nodes" required="">
 <div class="invalid-feedback">Please enter a valid node count.</div>
-<label for="hplaigflops" class="form-label">HPL-AI score (Giga-flop/s)</label>
+<label for="hplaigflops" class="form-label">HPL-MxP score (Giga-flop/s)</label>
 <input type="text" class="form-control" id="hplaigflops" required="">
-<div class="invalid-feedback">Please enter a valid HPL-AI score.</div>
-<label for="hplaiimpl" class="form-label">HPL-AI implementation author and version</label>
+<div class="invalid-feedback">Please enter a valid HPL-MxP score.</div>
+<label for="hplaiimpl" class="form-label">HPL-MxP implementation author and version</label>
 <input type="text" class="form-control" id="hplaiimpl" required="">
-<div class="invalid-feedback">Please enter a valid HPL-AI author and version.</div>
+<div class="invalid-feedback">Please enter a valid HPL-MxP author and version.</div>
 <label for="hplgflops" class="form-label">HPL score (Giga-flop/s) (in 64-bit floating-point arithmetic)</label>
 <input type="text" class="form-control" id="hplgflops" required="">
 <div class="invalid-feedback">Please enter a valid HPL score.</div>
-<label for="outputFile" class="form-label">HPL-AI output file</label>
+<label for="outputFile" class="form-label">HPL-MxP output file</label>
 <input class="form-control" type="file" id="outputFile">
 <label for="osname" class="form-label">Operating system</label>
 <input type="text" class="form-control" id="osname">
