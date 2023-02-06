@@ -13,7 +13,11 @@ higher performance rate.
 Vendor Implementations
 ----------------------
 
-NVIDIA released a [container
+- NVIDIA released a [container
 image](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/hpc-benchmarks)
 with a few HPC benchmarks including HPL-AI implementation (requires NVIDIA
 Account to download).
+- AMD released an optimized
+[HPL-MxP implementation](https://www.amd.com/en/developer/zen-software-studio/applications/pre-built-applications.html)
+for Zen-4 processors (the page also includes other benchmarks as well: HPL,
+HPCG, and STREAM)

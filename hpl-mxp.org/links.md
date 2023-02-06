@@ -8,4 +8,3 @@ Links
 - [Nick Higham's blog post on float16 and bfloat16](https://nickhigham.wordpress.com/2018/12/03/half-precision-arithmetic-fp16-versus-bfloat16/)
 - [RIKEN's HPL-AI Implementation for Fugaku supercomputer](https://www.r-ccs.riken.jp/labs/lpnctrt/projects/hpl-ai/index.html)
     - [Git repositiory with RIKEN's Fugaku code](https://github.com/RIKEN-RCCS/hpl-ai)
-- [An optimized HPL-MxP implementation for AMD Zen-4 processors](https://www.amd.com/en/developer/zen-software-studio/applications/pre-built-applications.html)
