@@ -21,16 +21,16 @@ In an attempt to obtain uniformity across all computers in performance
 reporting, the algorithm used in solving the low-precision system of equations
 in the benchmark procedure must numerically conform to an LU factorization. In
 particular, the operation count for the algorithm must be
-2/3n^3 + O(n^2)
+<sup>2</sup>/<sub>3</sub>n<sup>3</sup> + O(n<sup>2</sup>)
 floating point operations even though double-precision arithmetic is not
 required.
 
 The HPL harness computes a backward-error:
-||Ax-b\||\_oo / (||A||\_oo ||x||\_oo + ||b||\_oo) / (N * Epsilon),
-where Epsilon is the machine precision in 64-bit
-floating point arithmetic (on IEEE machines this is 1/2^53) and
-N is the size of the problem. There is no restriction on the problem
-size N. However, if the backward-error is greater than 16, the run
+||Ax-b||<sub>&infin;</sub> / (||A||<sub>&infin;</sub> ||x||<sub>&infin;</sub> + ||b||<sub>&infin;</sub>) / (n * &epsilon;),
+where &epsilon; is the machine precision in 64-bit
+floating point arithmetic (on IEEE machines this is &frac12;<sup>53</sup>) and
+"n" is the size of the problem. There is no restriction on the problem
+size "n". However, if the backward-error is greater than 16, the run
 is invalid.
 
 The implementation is allowed to do balancing and scaling to obtain the numbers
@@ -49,9 +49,9 @@ perform GMRES, or another iterative method, in 64-bit floating point arithmetic 
 preconditioner. If the implementation takes more than 50 iterations, the method
 should trigger a failure and the run is invalid.
 
-In computing a rate of execution, 2/3 n^3 + 3/2 n^2 operations
-(the formula 2/3 n^3 - 1/2 n^2
-accounts for LU factorization and 2\*n^2 for the subsequent back- and
+In computing a rate of execution, <sup>2</sup>/<sub>3</sub>n<sup>3</sup>+<sup>3</sup>/<sub>2</sub>n<sup>2</sup> operations
+(the formula <sup>2</sup>/<sub>3</sub>n<sup>3</sup> - &frac12; n<sup>2</sup>
+accounts for LU factorization and 2n<sup>2</sup> for the subsequent back- and
 forward-solves) will be divided by the total time-to-solution to arrive
 at the rate of operations per second.
 
