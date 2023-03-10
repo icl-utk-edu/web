@@ -31,7 +31,9 @@
 <tr>
 <td colspan="2">
 <div class="SoftwareDescription"><p>
-This release contains support for CUDA 11 and support for Pascal, Volta, and Ampere cards.
+This release contains support for CUDA 11 and support for Pascal, Volta, and
+Ampere cards.  The code offloads to one GPU per MPI rank. This requires running
+as many MPI ranks per node as there are GPUs available on a node.
 </p>
 <p>
 It was compiled against OpenMPI 4.0 and GCC 4.8.5.
