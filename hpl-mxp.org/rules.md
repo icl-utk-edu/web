@@ -14,8 +14,8 @@ as a preconditioner in the iterative algorithm.
 The benchmark should use the
 [HPL benchmark harness](https://www.netlib.org/benchmark/hpl/) with a modification of the matrix
 generator. The modified generator should produce a non-symmetric matrix with the diagonal
-entries being the sum of the row's off-diagonal elements, this will force the matrix to
-be diagonally dominant.
+entries being the sum of magnitudes of each row's off-diagonal elements, this
+will force the matrix to be diagonally dominant.
 
 In an attempt to obtain uniformity across all computers in performance
 reporting, the algorithm used in solving the low-precision system of equations
