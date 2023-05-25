@@ -21,3 +21,7 @@ jobs:
 
       - name: Update hpl-mxp.org website
         run: wget -O - -q http://hpl-mxp.org/tmpl?update
+
+      - name: Update hpg-mxp.org website
+        run: wget -O - -q http://hpg-mxp.org/tmpl?update
+
