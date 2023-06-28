@@ -78,6 +78,11 @@
 </tr>
 <tr>
 <td>
+<div class="Style"><a href="index.html#367">Is it allowed to mixed floating-point precisions in optimized HPCG?</a></div>
+</td>
+</tr>
+<tr>
+<td>
 <br />
 </td>
 </tr>
@@ -294,16 +299,21 @@ For example, a diagonal storage format is likely to be very good for HPCG matrix
 Data compression, and especially the kind that takes advantage of the known matrix structure, reduces the data transfer amount that most solvers are unable to replicate for majority of use cases.
 </div>
 <div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</div>
 </td>
 </tr>
 <tr>
 <td>
+<a name="367"></a>
+<div class="Question">Is it allowed to mixed floating-point precisions in optimized HPCG?</div>
+<div class="Answer">No, all optimized kernels are to compute their
+inputs, intermediate values, and outputs in 64-bit floating point
+precision.
+</div>
+<div class="Answer" align="right"><a href="index.html#top">&uarr;</a></div>
+</td>
+</tr>
 <br />
-</td>
-</tr>
-<tr>
-<td>
-<a name="77"></a>
 <div class="SectionTitle">HPCG Results</div>
 <div class="SectionDescription"></div>
 </td>
