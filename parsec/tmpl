@@ -5,26 +5,9 @@ use warnings;
 use CGI 'header';
 use Text::MultiMarkdown 'markdown';
 
-my $DOCROOT = '/var/www/html';
-
 main();
 
 #---------------------------------------------------
-
-sub diag {
-   print header();
-   print shift;
-   exit;
-}
-
-sub request {
-  # Given an HTTP document request, determine which file to return
-  my $file = $DOCROOT . shift;
-  for('', '.md', '/index.md', '.html', '/index.html'){
-    return($file.$_,200) if -f $file.$_;
-  }
-  return '404.md',404;
-}
 
 sub getfile {
   # Return the contents of a given file
@@ -43,20 +26,18 @@ sub update {
 }
 
 sub main {
-  my $path = $ENV{PATH_INFO} || '';
+  my $file = $ENV{PATH_TRANSLATED};
   return update() if $ENV{QUERY_STRING} eq 'update';
-  my ($file, $status) = request($path);
   my $content = markdown( getfile $file );
-  my ($title) = $content =~ /<h1[^>]*>(.+)<\/h1>/;
-  my ($tmpl_file) = $content =~ /<!-- TMPL=(\S+) -->/;
-  $tmpl_file ||= 'tmpl.html';
-  my $tmpl = getfile("$DOCROOT/$tmpl_file");
+  my ($title) = $content =~ /<h1[^>]*>(.+)<\/h1>/i;
+  $title ||= '';
+  my $tmpl = getfile('tmpl.html');
   $tmpl =~ s/CONTENT/$content/s;
-  $tmpl =~ s/TITLE/$title/sg;
+  $tmpl =~ s/TITLE/$title/gs;
+  $tmpl =~ s/BASEURL/\/parsec-test/gs;
+  $tmpl =~ s/DATE//s;
 
-  print header(
-    -status => $status,
-    -charset => 'UTF-8',
-    );
+  print header(-charset => 'UTF-8');
   print $tmpl;
 }
+
