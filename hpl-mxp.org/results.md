@@ -16,7 +16,7 @@ results.
 <th>Site</th>
 <th>Computer</th>
 <th>Cores</th>
-<th>HPL-AI (Eflop/s)</th>
+<th>HPL-MxP (Eflop/s)</th>
 <th>TOP500 Rank</th>
 <th>HPL Rmax (Eflop/s)</th>
 <th>Speedup</th>
