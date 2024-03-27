@@ -7,7 +7,7 @@ performance results bi-annually. Below are the currently available
 results.
 
 <table class="table table-striped table-hover caption-top">
-<caption>June 2023</caption>
+<caption>November 2023</caption>
 <colgroup>
 <col span="8" style="align:cetner">
 </colgroup>
