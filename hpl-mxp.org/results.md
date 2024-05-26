@@ -227,7 +227,7 @@ results.
 <td>Champollion</td>
 <td>19,840</td>
 <td>0.017</td>
-<td></td>
+<td>412</td>
 <td>0.0023</td>
 <td>7.3</td>
 </tr>
@@ -237,7 +237,7 @@ results.
 <td>MTS GROM</td>
 <td>19,840</td>
 <td>0.015</td>
-<td></td>
+<td>433</td>
 <td>0.0023</td>
 <td>6.6</td>
 </tr>
@@ -267,7 +267,7 @@ results.
 <td>Big Red 200 GPU</td>
 <td>31,744</td>
 <td>0.006</td>
-<td></td>
+<td>242</td>
 <td>0.0024</td>
 <td>2.5</td>
 </tr>
@@ -277,7 +277,7 @@ results.
 <td>Grace GPU</td>
 <td>26,400</td>
 <td>0.004</td>
-<td></td>
+<td>333</td>
 <td>0.0021</td>
 <td>1.9</td>
 </tr>
