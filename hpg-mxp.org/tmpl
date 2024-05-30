@@ -38,8 +38,10 @@ sub getfile {
 
 sub update {
    chdir '/var/repo';
-   print header(), `git pull 2>&1`;
-   return 1;
+   my $msg = `git pull 2>&1`;
+   my $code = $? ? 500 : 200;
+   print header( -status=>$code, -charset=>'UTF-8' );
+   print $msg;
 }
 
 sub main {
