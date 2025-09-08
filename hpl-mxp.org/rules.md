@@ -40,7 +40,7 @@ must be included in the time to solution.
 The factorization can use mixed precision during its construction, e.g., the
 panel factorization and triangular solves can be done in 32-bit arithmetic and
 the Schur complement (matrix-matrix multiplication of the form
-A[2,2] <- A[2,2] - A[2,1] * inverse(A[1,1]) * A[1,2]
+A<sub>2,2</sub> <- A<sub>2,2</sub> - A<sub>2,1</sub> * inverse(A<sub>1,1</sub>) * A<sub>1,2</sub>)
 can be computed in 16-bit arithmetic with 32-bit accumulation.
 
 The computation rate is based on the time to solve the problem: factor the
