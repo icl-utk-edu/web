@@ -28,7 +28,7 @@ required.
 The HPL harness computes a backward-error:
 ||Ax-b||<sub>&infin;</sub> / (||A||<sub>&infin;</sub> ||x||<sub>&infin;</sub> + ||b||<sub>&infin;</sub>) / (n * &epsilon;),
 where &epsilon; is the machine precision in 64-bit
-floating-point arithmetic (on IEEE machines this is &frac12;<sup>53</sup>) and
+floating-point arithmetic (on machines implementing IEEE 754 this is &frac12;<sup>53</sup>) and
 "n" is the size of the problem. There is no restriction on the problem
 size "n". However, if the backward-error is greater than 16, the run
 is invalid.
