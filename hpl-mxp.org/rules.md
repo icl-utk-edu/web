@@ -59,7 +59,8 @@ at the rate of operations per second.
 As part of the submission of results we expect the submitter to provide a
 detailed explanation of the algorithm used in the submission.
 
-We have provided a reference implementation the purpose of which is to show how the
+We have provided a reference implementation for the purpose of showing
+how the
 benchmark could be implemented. We do not expect this to be used when
 running of the benchmark. Optimizations should be applied to achieve higher
 performance than the reference implementation could achieve. The
