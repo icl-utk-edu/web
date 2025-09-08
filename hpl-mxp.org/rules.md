@@ -34,7 +34,7 @@ size "n". However, if the backward-error is greater than 16, the run
 is invalid.
 
 The implementation is allowed to do balancing and scaling to obtain the numbers
-within range of the floating-point format, but the time required for balancing
+within range of the floating-point format used for computing, but the time required for balancing
 must be included in the time to solution.
 
 The factorization can use mixed-precision during its construction, e.g., the
