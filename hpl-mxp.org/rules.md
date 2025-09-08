@@ -9,7 +9,9 @@ decomposition), and then (b) use an iterative method (like GMRES) in 64-bit prec
 to iterate with the approximate low-precision solution to compute a final
 solution and obtain the accuracy one would have achieved by LU decomposition in
 64-bit floating-point arithmetic. The low-precision LU factors should be used
-as a preconditioner in the iterative algorithm.
+as a preconditioner in the iterative algorithm. The lowest allowed
+precision is 16-bit floating-point (available in the recent IEEE 754
+standard) because no analysis was performed for lower precisions.
 
 The benchmark should use the
 [HPL benchmark harness](https://www.netlib.org/benchmark/hpl/) with a modification of the matrix
