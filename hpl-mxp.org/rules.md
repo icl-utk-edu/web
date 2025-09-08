@@ -15,9 +15,13 @@ standard) because no analysis was performed for lower precisions.
 
 The benchmark should use the
 [HPL benchmark harness](https://www.netlib.org/benchmark/hpl/) with a modification of the matrix
-generator. The modified generator should produce a non-symmetric matrix with the diagonal
-entries being the sum of magnitudes of each row's off-diagonal elements, this
-will force the matrix to be diagonally dominant.
+generator. The modified generator should produce a non-symmetric matrix that may be factored in numerically stable fashion without requiring
+pivoting. See <a href="/publications.md">Publications page</a> for
+example generators such as synthetic matrix products or mild scaling of
+the diagonal. The property of strict diagonal dominance could be used for
+testing purposes only. For example, by explicitly making sure that the
+diagonal entries are the sum of magnitudes of each row's off-diagonal
+elements forces the matrix to be row diagonally dominant.
 
 In an attempt to obtain uniformity across all computers in performance
 reporting, the algorithm used in solving the low-precision system of equations
