@@ -11,7 +11,11 @@ solution and obtain the accuracy one would have achieved by LU decomposition in
 64-bit floating-point arithmetic. The low-precision LU factors should be used
 as a preconditioner in the iterative algorithm. The lowest allowed
 precision is 16-bit floating-point (available in the recent IEEE 754
-standard) because no analysis was performed for lower precisions.
+standard). There is no theoretical analysis available to apply in
+solving linear systems with general square matrices in precisions using
+less than 16 bits.  The restriction to only disallow less than 16-bit
+floating-point precision applies to results submitted after the June
+2025 release of the HPL-MxP list.
 
 The benchmark should use the
 [HPL benchmark harness](https://www.netlib.org/benchmark/hpl/) with a modification of the matrix
