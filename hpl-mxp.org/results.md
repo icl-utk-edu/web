@@ -166,7 +166,7 @@ results.
 <td>NTT DATA</td>
 <td>OpenCanvas GPUaaS SP1</td>
 <td>81,648</td>
-<td>0.425<sup>a</sup</td>
+<td>0.425</td>
 <td>105</td>
 <td>0.0175</td>
 <td>24.2</td>
