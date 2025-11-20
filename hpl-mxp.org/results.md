@@ -123,16 +123,6 @@ results.
 </tr>
 <tr>
 <td>11</td>
-<td>NTT DATA</td>
-<td>OpenCanvas GPUaaS SP1</td>
-<td>81,648</td>
-<td>0.669<sup>a</sup</td>
-<td>105</td>
-<td>0.0175</td>
-<td>38.2</td>
-</tr>
-<tr>
-<td>12</td>
 <td>CII, Inst. of Science</td>
 <td>TSUBAME4</td>
 <td>172,800</td>
@@ -142,7 +132,7 @@ results.
 <td>16.2</td>
 </tr>
 <tr>
-<td>13</td>
+<td>12</td>
 <td>NVIDIA</td>
 <td>Selene</td>
 <td>555,520</td>
@@ -152,7 +142,7 @@ results.
 <td>9.9</td>
 </tr>
 <tr>
-<td>14</td>
+<td>13</td>
 <td>DOE/SC/LBNL</td>
 <td>Perlmutter</td>
 <td>888,832</td>
@@ -162,7 +152,7 @@ results.
 <td>7.4</td>
 </tr>
 <tr>
-<td>15</td>
+<td>14</td>
 <td>FZJ</td>
 <td>JUWELS BM</td>
 <td>449,280</td>
@@ -170,6 +160,16 @@ results.
 <td>48</td>
 <td>0.0441</td>
 <td>10.7</td>
+</tr>
+<tr>
+<td>15</td>
+<td>NTT DATA</td>
+<td>OpenCanvas GPUaaS SP1</td>
+<td>81,648</td>
+<td>0.425<sup>a</sup</td>
+<td>105</td>
+<td>0.0175</td>
+<td>24.2</td>
 </tr>
 <tr>
 <td>16</td>
