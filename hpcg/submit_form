@@ -65,7 +65,7 @@ while(@schema){
 }
 
 my $db = DBIx::Simple->connect("dbi:SQLite:dbname=/var/data/$table.db");
-my $col_def = join(',', @fields); 
+my $col_def = join(',', @fields);
 $db->{dbh}->do("CREATE TABLE IF NOT EXISTS $table ($col_def)");
 
 my (%data, @errors);
@@ -85,6 +85,9 @@ if(@errors){
    print join("\n", @errors);
    exit;
 }
+
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+$data{'list'} = ($year + 1900) . $mon . $mday . 't' . $hour . $min . $sec;
 
 my $result = $db->insert($table, \%data);
 if(not defined $result or $result->{lc_columns} != 1){
