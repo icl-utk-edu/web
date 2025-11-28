@@ -51,7 +51,7 @@ my @schema = (
    compiler => '',
    math_library => '',
    mpi_library => '',
-   results_file => '',
+   results_file => qr/hpcg/i,
    list => '',
 );
 
