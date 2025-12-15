@@ -57,3 +57,7 @@ size should reflect what would be reasonable for a real sparse iterative solver.
 
 The source code documentation can be generated with a Doxygen (version 1.8 or
 newer).
+
+## References ##
+
+* Aditya Kashi, Nicholson Koukpaizan, Hao Lu, Michael Matheson, Sarp Oral, Feiyi Wang, _Scaling the memory wall using mixed-precision - HPG-MxP on an exascale machine_, https://dl.acm.org/doi/10.1145/3712285.3759877
