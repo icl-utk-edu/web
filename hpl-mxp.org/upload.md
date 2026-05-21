@@ -8,5 +8,5 @@ The results can be uploaded through an
 The deadline for submitting results depends on the upcoming edition
 of the list. The following dates are used annually:
 
-* to appear in the ISC High Performance edition the deadline is May 15th.
-* to appear in the SC series edition the deadline is October 20th.
+* to appear in the ISC High Performance 2026 edition the deadline is June 5th.
+* to appear in the SC26 edition the deadline is October 25th.
