@@ -53,7 +53,7 @@ results.
 </tr>
 <tr>
 <td>4</td>
-<td>National Supercomputing Centre Shenzhen</td>
+<td>NSC<sup>1</sup> Shenzhen</td>
 <td>LineShine</td>
 <td>13,789,440</td>
 <td>7.9223</td>
@@ -173,7 +173,7 @@ results.
 </tr>
 <tr>
 <td>16</td>
-<td>National Supercomputing Centre Singapore</td>
+<td>NSC<sup>1</sup> Singapore</td>
 <td>ASPIRE 2B</td>
 <td>239,616</td>
 <td>0.596</td>
@@ -293,7 +293,7 @@ results.
 </tr>
 <tr>
 <td>28</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -382,6 +382,7 @@ results.
 <td>1.9</td>
 </tr>
 </table>
+<sup>1</sup>National Supercomputing Centre<br/>
 <sup>b</sup> Results with FP8 data type (no longer admissible as of November 2025).
 
 <table class="table table-striped table-hover caption-top">
@@ -621,7 +622,7 @@ results.
 </tr>
 <tr>
 <td>23</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -1000,7 +1001,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>19</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -1327,7 +1328,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>16</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -1634,7 +1635,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>16</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -1921,7 +1922,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>15</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -2198,7 +2199,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>15</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -2475,7 +2476,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>15</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
@@ -2919,7 +2920,7 @@ Results with FP8 data type (no longer admissible as of November 2025).
 </tr>
 <tr>
 <td>10</td>
-<td>NSC</td>
+<td>NSC, Sweden</td>
 <td>Berzelius</td>
 <td>59,520</td>
 <td>0.050</td>
