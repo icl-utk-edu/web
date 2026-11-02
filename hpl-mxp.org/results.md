@@ -7,6 +7,384 @@ performance results bi-annually. Below are the currently available
 results.
 
 <table class="table table-striped table-hover caption-top">
+<caption>June 2026</caption>
+<colgroup>
+<col span="8" style="align:cetner">
+</colgroup>
+<tr>
+<th>Rank</th>
+<th>Site</th>
+<th>Computer</th>
+<th>Cores</th>
+<th>HPL-MxP (Eflop/s)</th>
+<th>TOP500 Rank</th>
+<th>HPL Rmax (Eflop/s)</th>
+<th>Speedup</th>
+</tr>
+<tr>
+<td>1</td>
+<td>DOE/SC/LLNL</td>
+<td>El Capitan</td>
+<td>11,340,000</td>
+<td>16.680</td>
+<td>2</td>
+<td>1.8090</td>
+<td>9.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DOE/SC/ANL</td>
+<td>Aurora</td>
+<td>9,264,128</td>
+<td>11.643</td>
+<td>4</td>
+<td>1.0120</td>
+<td>11.5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DOE/SC/ORNL</td>
+<td>Frontier</td>
+<td>9,066,176</td>
+<td>11.390</td>
+<td>3</td>
+<td>1.3530</td>
+<td>8.4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>National Supercomputing Centre Shenzhen</td>
+<td>LineShine</td>
+<td>13,789,440</td>
+<td>7.9223</td>
+<td>1</td>
+<td>2.1984</td>
+<td>3.6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>EuroHPC/FZJ</td>
+<td>JUPITER Booster</td>
+<td>4,801,344</td>
+<td>7.9221</td>
+<td>5</td>
+<td>1.0000</td>
+<td>7.9</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Eni S.p.A.</td>
+<td>HPC7</td>
+<td>3,461,472</td>
+<td>4.284</td>
+<td>6</td>
+<td>0.5715</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SoftBank Corp.</td>
+<td>CHIE-4</td>
+<td>662,256</td>
+<td>3.304</td>
+<td>21</td>
+<td>0.1354</td>
+<td>24.4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>AIST</td>
+<td>ABCI 3.0</td>
+<td>479,232</td>
+<td>2.363<sup>b</sup></td>
+<td>19</td>
+<td>0.1451</td>
+<td>16.3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>EuroHPC/CSC</td>
+<td>LUMI</td>
+<td>2,752,704</td>
+<td>2.350</td>
+<td>11</td>
+<td>0.3797</td>
+<td>6.2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>RIKEN</td>
+<td>Fugaku</td>
+<td>7,630,848</td>
+<td>2.000</td>
+<td>9</td>
+<td>0.4420</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>11</td>
+<td>EuroHPC/CINECA</td>
+<td>Leonardo</td>
+<td>1,824,768</td>
+<td>1.842</td>
+<td>12</td>
+<td>0.2412</td>
+<td>7.6</td>
+</tr>
+<tr>
+<td>12</td>
+<td>SAKURA/Prunus</td>
+<td>SAKURAONE CYD</td>
+<td>185,920</td>
+<td>0.911</td>
+<td>63</td>
+<td>0.0378</td>
+<td>24.1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>King Abdullah University of Science and Technology</td>
+<td>Shaheen III - GPU</td>
+<td>574,464</td>
+<td>0.704</td>
+<td>22</td>
+<td>0.1228</td>
+<td>5.7</td>
+</tr>
+<tr>
+<td>14</td>
+<td>CII, Institute of Science</td>
+<td>TSUBAME4</td>
+<td>172,800</td>
+<td>0.641</td>
+<td>62</td>
+<td>0.0396</td>
+<td>16.2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>NVIDIA</td>
+<td>Selene</td>
+<td>555,520</td>
+<td>0.630</td>
+<td>45</td>
+<td>0.0635</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>16</td>
+<td>National Supercomputing Centre Singapore</td>
+<td>ASPIRE 2B</td>
+<td>239,616</td>
+<td>0.596</td>
+<td>44</td>
+<td>0.0664</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>DOE/SC/LBNL</td>
+<td>Perlmutter</td>
+<td>888,832</td>
+<td>0.590</td>
+<td>34</td>
+<td>0.0792</td>
+<td>7.4</td>
+</tr>
+<tr>
+<td>18</td>
+<td>FZJ</td>
+<td>JUWELS BM</td>
+<td>449,280</td>
+<td>0.470</td>
+<td>58</td>
+<td>0.0441</td>
+<td>10.7</td>
+</tr>
+<tr>
+<td>19</td>
+<td>NTT DATA Japan Corporation</td>
+<td>OpenCanvas GPUaaS SP1</td>
+<td>81,648</td>
+<td>0.425<sup>b</sup></td></td>
+<td>124</td>
+<td>0.0175</td>
+<td>24.2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>GENCI-CINES</td>
+<td>Adastra</td>
+<td>319,072</td>
+<td>0.303</td>
+<td>55</td>
+<td>0.0461</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Research Institute</td>
+<td>Research Cluster</td>
+<td>73,728</td>
+<td>0.242</td>
+<td></td>
+<td>0.0238</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Pawsey Supercomputing Centre</td>
+<td>Setonix - GPU</td>
+<td>181,248</td>
+<td>0.175</td>
+<td>81</td>
+<td>0.0272</td>
+<td>6.4</td>
+</tr>
+<tr>
+<td>23</td>
+<td>SberCloud</td>
+<td>Christofari Neo</td>
+<td>98,208</td>
+<td>0.123</td>
+<td>167</td>
+<td>0.0120</td>
+<td>10.3</td>
+</tr>
+<tr>
+<td>24</td>
+<td>DOE/SC/ANL</td>
+<td>Polaris</td>
+<td>256,592</td>
+<td>0.114</td>
+<td>83</td>
+<td>0.0258</td>
+<td>4.4</td>
+</tr>
+<tr>
+<td>25</td>
+<td>ITC</td>
+<td>Wisteria</td>
+<td>368,640</td>
+<td>0.100</td>
+<td>99</td>
+<td>0.0221</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>26</td>
+<td>TRUBA</td>
+<td>ARF ACC</td>
+<td>26,496</td>
+<td>0.094</td>
+<td>165</td>
+<td>0.0121</td>
+<td>7.7</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Tokyo University of Technology</td>
+<td>SEIRAN</td>
+<td>15,552</td>
+<td>0.066</td>
+<td>399</td>
+<td>0.0033</td>
+<td>19.8</td>
+</tr>
+<tr>
+<td>28</td>
+<td>NSC</td>
+<td>Berzelius</td>
+<td>59,520</td>
+<td>0.050</td>
+<td>295</td>
+<td>0.0053</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Cyfronet</td>
+<td>Athena</td>
+<td>47,616</td>
+<td>0.050</td>
+<td>306</td>
+<td>0.0051</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>30</td>
+<td>KTH - Royal Institute of Technology</td>
+<td>Dardel GPU</td>
+<td>56,640</td>
+<td>0.048</td>
+<td>191</td>
+<td>0.0099</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Purdue University</td>
+<td>Gautschi</td>
+<td>23,360</td>
+<td>0.030</td>
+<td>241</td>
+<td>0.0073</td>
+<td>4.1</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Calcul Quebec/Compute Canada</td>
+<td>Rorqual</td>
+<td>47,952</td>
+<td>0.022</td>
+<td>248</td>
+<td>0.0070</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>33</td>
+<td>NVIDIA</td>
+<td>DGX Saturn V</td>
+<td>87,040</td>
+<td>0.022</td>
+<td>355</td>
+<td>0.0040</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Calcul Quebec/Compute Canada</td>
+<td>Narval</td>
+<td>76,320</td>
+<td>0.014</td>
+<td>276</td>
+<td>0.0059</td>
+<td>2.4</td>
+</tr>
+<tr>
+<td>35</td>
+<td>LNCC</td>
+<td>Santos Dumont</td>
+<td>68,064</td>
+<td>0.010</td>
+<td>141</td>
+<td>0.0143</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Indiana University</td>
+<td>Big Red 200 GPU</td>
+<td>31,744</td>
+<td>0.006</td>
+<td>406</td>
+<td>0.0032</td>
+<td>1.9</td>
+</tr>
+</table>
+<sup>b</sup> Results with FP8 data type (no longer admissible as of November 2025).
+
+<table class="table table-striped table-hover caption-top">
 <caption>November 2025</caption>
 <colgroup>
 <col span="8" style="align:cetner">
